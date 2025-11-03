@@ -119,7 +119,7 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
             margin-bottom: 30px;
         }
@@ -140,7 +140,7 @@
         }
 
         .card-title {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
             margin-bottom: 10px;
             color: #333;
@@ -157,18 +157,65 @@
             font-weight: 600;
         }
 
+        .url-buttons {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .url-button {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .url-button.primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .url-button.archive {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            color: #333;
+        }
+
+        .url-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
         .document-card {
             display: flex;
-            align-items: center;
-            gap: 15px;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .document-icon {
             font-size: 3rem;
+            text-align: center;
         }
 
         .document-info {
             flex: 1;
+        }
+
+        .meme-card {
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+            aspect-ratio: 1;
+        }
+
+        .meme-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
         }
 
         .video-accordion {
@@ -266,6 +313,93 @@
             font-size: 1.2rem;
         }
 
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.9);
+            border: none;
+            font-size: 2rem;
+            padding: 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .modal-nav:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .modal-prev {
+            left: 20px;
+        }
+
+        .modal-next {
+            right: 20px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            font-size: 2rem;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            color: #333;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -279,6 +413,21 @@
             .search-sort {
                 flex-direction: column;
             }
+
+            .modal-nav {
+                font-size: 1.5rem;
+                width: 50px;
+                height: 50px;
+                padding: 10px;
+            }
+
+            .modal-prev {
+                left: 10px;
+            }
+
+            .modal-next {
+                right: 10px;
+            }
         }
     </style>
 </head>
@@ -287,6 +436,29 @@
         <header>
             <h1>88888888.LIFE</h1>
             <p class="subtitle">Explore Truth & Knowledge</p>
+            <p>
+                Chinese Lucky Number 8
+            </p>
+            <p>
+                The number 8 is considered the luckiest number in Chinese culture due to its phonetic similarity to the word "fa" (发), which means to prosper, become wealthy, or achieve success. This association makes 8 a symbol of wealth, prosperity, and high social status, leading to its widespread preference in various aspects of life. For instance, the Beijing 2008 Olympic Games opening ceremony began at 8:08 PM on August 8, 2008, deliberately chosen to maximize the auspiciousness of the number.
+            </p>
+            <p>
+                The number 8 is highly favored in business, real estate, and personal decisions. Properties with the number 8 in their address or floor number often command 10–20% higher prices, and the 8th floor is typically the most expensive in buildings  Phone numbers, car license plates, and gift amounts containing multiple 8s are considered especially lucky and can sell for significantly higher prices  Combinations like 88 (representing double happiness) and 888 (triple prosperity) are particularly desirable 
+            </p>
+            <p>
+                Beyond its general significance, 8 holds cultural and symbolic importance in Chinese mythology and philosophy. It is linked to the Eight Immortals in Taoist tradition and the Ba Gua (八卦), a set of eight trigrams used in cosmology and fengshui  The number's symmetry, resembling the infinity symbol when rotated, further enhances its positive connotations  While 4 is considered the most unlucky number due to its similarity to the word for death (死), 8 is actively sought after in both everyday and major life events 
+            </p>
+            <p>
+                <ul>
+                    <li><a href="https://www.istitutoitalocinese.org/en/eight-is-a-lucky-number/">2</a></li>
+                    <li><a href="https://www.workwell.sg/the-lucky-no-8-what-does-it-symbolize-in-chinese-culture/">3</a></li>
+                    <li><a href="https://www.chinahighlights.com/travelguide/culture/lucky-number-8.htm">4</a></li>
+                    <li><a href="https://www.reddit.com/r/ChineseLanguage/comments/d1oj1f/lucky_number_and_unlucky_number_in_china/">5</a></li>
+                    <li><a href="https://www.mandarinzone.com/chinese-lucky-numbers-unlucky-numbers/">6</a></li>
+                    <li><a href="https://blog.tutorabcchinese.com/chinese-culture/lucky-and-unlucky-chinese-numbers">7</a></li>
+                    <li><a href="https://www.wukongsch.com/blog/chinese-lucky-number-8-guide-2024-post-23655/">8</a></li>
+                </ul>
+            </p>
         </header>
 
         <div class="tabs">
@@ -319,7 +491,7 @@
 
         <!-- Memes Tab -->
         <div class="tab-content" id="memes">
-            <div class="empty-state">Coming soon...</div>
+            <div class="grid" id="memesGrid"></div>
         </div>
 
         <!-- Music Videos Tab -->
@@ -342,30 +514,1554 @@
         </div>
     </div>
 
+    <!-- Meme Modal Gallery -->
+    <div class="modal" id="memeModal">
+        <button class="modal-close" id="modalClose">✕</button>
+        <button class="modal-nav modal-prev" id="modalPrev">‹</button>
+        <div class="modal-content">
+            <img class="modal-image" id="modalImage" src="" alt="Meme">
+        </div>
+        <button class="modal-nav modal-next" id="modalNext">›</button>
+    </div>
+
     <script>
         const documentariesData = [
-            { title: "Russianvids 4 HOUR FLAT EARTH DOCUMENTARY", url: "https://www.youtube-nocookie.com/embed/I5ZN289jjDo", duration: 240 },
-            { title: "THE GREATEST LIE ON EARTH", url: "https://www.youtube-nocookie.com/embed/JKdRtRr3O-I", duration: 120 },
-            { title: "ODD TV's Flat Earth Trilogy", url: "https://www.youtube-nocookie.com/embed/ARp2j8t3O8Q", duration: 180 },
-            { title: "ODD TV interviews Edward Hendrie", url: "https://www.youtube-nocookie.com/embed/2fZGP5h_cWA", duration: 90 },
-            { title: "Flat Earth: Jesuits & the Global Conspiracy!", url: "https://www.youtube-nocookie.com/embed/1WHIr-IFqAo", duration: 150 },
-            { title: "The Jesuits and The Flat Earth part 1", url: "https://www.youtube-nocookie.com/embed/M1dQI2WHyFo", duration: 75 },
-            { title: "The Jesuits and The Flat Earth part 2", url: "https://www.youtube-nocookie.com/embed/WjLt5ltxNso", duration: 80 },
-            { title: "Catholic Confidential | Deplorable Jesuit Secrets Revealed", url: "https://www.youtube-nocookie.com/embed/ypRb8Z3dMRs", duration: 100 },
-            { title: "Jesuits Erasing our Flat Earth - Documentary", url: "https://www.youtube-nocookie.com/embed/olbyJDou4qQ", duration: 130 },
-            { title: "Dean Odle - Government Documents Admit Flat Earth", url: "https://www.youtube-nocookie.com/embed/xScoKPS8dWQ", duration: 95 },
-            { title: "The Roseanne Barr Podcast: What's beyond Antarctica? With Flat Earth Dave", url: "https://www.youtube-nocookie.com/embed/Oibi0R1YkGc", duration: 110 },
-            { title: "Christmas: Origin, History and Tradition", url: "https://www.youtube-nocookie.com/embed/p4E3H1AWuAY", duration: 85 },
-            { title: "The Creator's Calendar", url: "https://www.youtube-nocookie.com/embed/DbzFGEfgP_8", duration: 70 }
+            { 
+                title: "Russianvids 4 HOUR FLAT EARTH DOCUMENTARY", 
+                publicUrl: "https://www.youtube-nocookie.com/embed/I5ZN289jjDo",
+                archiveUrl: "/archives/videos/russianvids-4hr-flat-earth.mp4",
+                duration: 240 
+            },
+            { 
+                title: "THE GREATEST LIE ON EARTH", 
+                publicUrl: "https://www.youtube-nocookie.com/embed/JKdRtRr3O-I",
+                archiveUrl: "/archives/videos/greatest-lie-on-earth.mp4",
+                duration: 120 
+            },
+            { 
+                title: "ODD TV's Flat Earth Trilogy", 
+                publicUrl: "https://www.youtube-nocookie.com/embed/ARp2j8t3O8Q",
+                archiveUrl: "/archives/videos/oddtv-flat-earth-trilogy.mp4",
+                duration: 180 
+            },
+            { 
+                title: "ODD TV interviews Edward Hendrie", 
+                publicUrl: "https://www.youtube-nocookie.com/embed/2fZGP5h_cWA",
+                archiveUrl: "/archives/videos/oddtv-edward-hendrie.mp4",
+                duration: 90 
+            },
+            { 
+                title: "Flat Earth: Jesuits & the Global Conspiracy!", 
+                publicUrl: "https://www.youtube-nocookie.com/embed/1WHIr-IFqAo",
+                archiveUrl: "/archives/videos/jesuits-global-conspiracy.mp4",
+                duration: 150 
+            },
+            { 
+                title: "The Jesuits and The Flat Earth part 1", 
+                publicUrl: "https://www.youtube-nocookie.com/embed/M1dQI2WHyFo",
+                archiveUrl: "/archives/videos/jesuits-flat-earth-p1.mp4",
+                duration: 75 
+            },
+            { 
+                title: "The Jesuits and The Flat Earth part 2", 
+                publicUrl: "https://www.youtube-nocookie.com/embed/WjLt5ltxNso",
+                archiveUrl: "/archives/videos/jesuits-flat-earth-p2.mp4",
+                duration: 80 
+            },
+            { 
+                title: "Catholic Confidential | Deplorable Jesuit Secrets Revealed", 
+                publicUrl: "https://www.youtube-nocookie.com/embed/ypRb8Z3dMRs",
+                archiveUrl: "/archives/videos/catholic-confidential.mp4",
+                duration: 100 
+            },
+            { 
+                title: "Jesuits Erasing our Flat Earth - Documentary", 
+                publicUrl: "https://www.youtube-nocookie.com/embed/olbyJDou4qQ",
+                archiveUrl: "/archives/videos/jesuits-erasing-flat-earth.mp4",
+                duration: 130 
+            },
+            { 
+                title: "Dean Odle - Government Documents Admit Flat Earth", 
+                publicUrl: "https://www.youtube-nocookie.com/embed/xScoKPS8dWQ",
+                archiveUrl: "/archives/videos/dean-odle-govt-docs.mp4",
+                duration: 95 
+            },
+            { 
+                title: "The Roseanne Barr Podcast: What's beyond Antarctica? With Flat Earth Dave", 
+                publicUrl: "https://www.youtube-nocookie.com/embed/Oibi0R1YkGc",
+                archiveUrl: "/archives/videos/roseanne-antarctica.mp4",
+                duration: 110 
+            },
+            { 
+                title: "Christmas: Origin, History and Tradition", 
+                publicUrl: "https://www.youtube-nocookie.com/embed/p4E3H1AWuAY",
+                archiveUrl: "/archives/videos/christmas-origin.mp4",
+                duration: 85 
+            },
+            { 
+                title: "The Creator's Calendar", 
+                publicUrl: "https://www.youtube-nocookie.com/embed/DbzFGEfgP_8",
+                archiveUrl: "/archives/videos/creators-calendar.mp4",
+                duration: 70 
+            }
         ];
 
         const documentsData = [
-            { title: "NASA Technical Memorandum - Derivation of a Point-Mass Aircraft Model", url: "https://ntrs.nasa.gov/api/citations/19890005752/downloads/19890005752.pdf" }
+            { 
+                title: "CIA Document - Derivation of a Point-Mass Aircraft Model (Flat Non-Rotating Earth)", 
+                publicUrl: "https://ntrs.nasa.gov/api/citations/19890005752/downloads/19890005752.pdf",
+                archiveUrl: "/archives/PDF/CIA/CIA-RDP86-00513R001343720008-3%20PLAIN%20FLAT%20FIRMAMENT.pdf"
+            }
+        ];
+
+        const memesData = [
+            // Top-level gallery images
+            {
+                src: "/archives/gallery/0a05b9ec80e00cb782db9ab3a37b13eb.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/0cglhev4jvt31.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/10801.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/13254105_10154190157034293_7954312585114140960_n.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/1800_1489284972.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/18555862_1842254636038829_6517177877592314530_n.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/18622359_1845407415723551_3297985419718472795_n.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/19599028_1864411563823136_7777398739343398998_n.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/1mka6ks9s5m41.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/239587511_2891727824424833_571776806558867573_n.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/25299653_10213473556584932_607863832789701572_o.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/268c15e775d63b074ef351f27d4c864e--flat-earth.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/3069dca37d54d190ee6728668a2c7408--flat-earth.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/31870349_10209784488563745_1449732804509171712_n.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/3eb1c62c961585e3.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/42397423_2110857365845220_7354333618325422080_n.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/457009.webp",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/681203_LZE7Aw2p.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/69868954694f968f-370x512.webp",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/79178ef4ebde881395a50de5520c6206.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/7da0153d1c9f55c07df45ac1467395e4.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/800.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/85917553.webp",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/8a7e8afdd59cb7ef14aa48b532f1cfc9.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/9c2655c46def6540db68480f0066875d.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/9liqlay0al231.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/a8bda0e16eab8fe3d6a115c2a8e6323afb45021c9a8a6ce6e31d4515528cc38b_1.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/b511cdbf09b10733.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/bdd992c1fb887b80ee16f6f721f08f3e.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/BOB-Earth-Is-Flat-Meme.png",
+                alt: "BOB Earth Is Flat Meme"
+            },
+            {
+                src: "/archives/gallery/bonneville-foto-blu.png",
+                alt: "Bonneville Salt Flats"
+            },
+            {
+                src: "/archives/gallery/choose.jpeg",
+                alt: "Choose Your Reality"
+            },
+            {
+                src: "/archives/gallery/container.jpeg",
+                alt: "Container Ship Flat Earth"
+            },
+            {
+                src: "/archives/gallery/d065191f4392c06ca2fade2a482fdc5b--moon-landing-flat-earth.jpeg",
+                alt: "Moon Landing Flat Earth"
+            },
+            {
+                src: "/archives/gallery/D5qLqXBUEAAcejj.png",
+                alt: "Flat Earth Diagram"
+            },
+            {
+                src: "/archives/gallery/de394b9ebc6d77998d238957827089ae.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/ECT8WfP.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/FGaOxeGUcAASNcG.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/figure-14.webp",
+                alt: "Flat Earth Figure"
+            },
+            {
+                src: "/archives/gallery/flat-earth-horizon-flat.webp",
+                alt: "Over 20 Miles High, Horizon Still 100% Flat"
+            },
+            {
+                src: "/archives/gallery/flat-earth-meme-flat-earth-memes-earth-is-flat-meme-17.jpeg",
+                alt: "Sea Level Not Sea Curve"
+            },
+            {
+                src: "/archives/gallery/Flat-Earth-Memes-284-14.jpeg",
+                alt: "They Know You Live on a Flat Earth"
+            },
+            {
+                src: "/archives/gallery/Flat-Earth-Memes-392-2.jpeg",
+                alt: "Masons & Illuminati Control"
+            },
+            {
+                src: "/archives/gallery/flat-earth-memes.avif",
+                alt: "Flat Earth Memes Collection"
+            },
+            {
+                src: "/archives/gallery/foto-1.jpeg",
+                alt: "Flat Earth Photo"
+            },
+            {
+                src: "/archives/gallery/i.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/img_4030.webp",
+                alt: "Flat Earth Image"
+            },
+            {
+                src: "/archives/gallery/lens.jpeg",
+                alt: "Lens Effect"
+            },
+            {
+                src: "/archives/gallery/livella-ad-acqua_700x525.jpeg",
+                alt: "Water Level Tool"
+            },
+            {
+                src: "/archives/gallery/maxresdefault.jpeg",
+                alt: "Flat Earth Thumbnail"
+            },
+            {
+                src: "/archives/gallery/mirage-2.jpeg",
+                alt: "Mirage Effect"
+            },
+            {
+                src: "/archives/gallery/moon-landing-hoax.jpeg",
+                alt: "Moon Landing Hoax"
+            },
+            {
+                src: "/archives/gallery/no curve.jpeg",
+                alt: "No Curve Visible"
+            },
+            {
+                src: "/archives/gallery/OIP.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/PB8ro82ZpZP35bVGjGoE93K3E4U5KX8KtMBJ2rgytguUA7j6xzvonybvscYdgACy12f5CjejsQfooRxjADy2KLpj1sSWG7V34icQSPRe5aYbwwxi.webp",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/R.jpeg",
+                alt: "Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/salar.jpeg",
+                alt: "Salt Flats"
+            },
+            {
+                src: "/archives/gallery/sfondo-sito.webp",
+                alt: "Site Background"
+            },
+            {
+                src: "/archives/gallery/slide115.webp",
+                alt: "Flat Earth Slide"
+            },
+            {
+                src: "/archives/gallery/suit.jpeg",
+                alt: "Space Suit"
+            },
+            {
+                src: "/archives/gallery/untitled.png",
+                alt: "Untitled Flat Earth"
+            },
+            {
+                src: "/archives/gallery/water-level-flat-earth-6-1.png",
+                alt: "Water Level Flat Earth"
+            },
+            {
+                src: "/archives/gallery/why-is-it-flat-earth-meme.jpeg",
+                alt: "Why Is It Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/wouldnt-you-flat-earth-meme.jpeg",
+                alt: "Wouldn't You Flat Earth Meme"
+            },
+            
+            // Coriolis subdirectory
+            {
+                src: "/archives/gallery/coriolis/28276951_1582860135082590_2962531636118464193_n.jpeg",
+                alt: "Coriolis Effect Debunked"
+            },
+            {
+                src: "/archives/gallery/coriolis/32169103_112898282917536_1413386149845532672_n-1.jpeg",
+                alt: "Coriolis Effect"
+            },
+            {
+                src: "/archives/gallery/coriolis/32897991_1922239064474280_4095114951524352000_n.jpeg",
+                alt: "Coriolis Effect"
+            },
+            {
+                src: "/archives/gallery/coriolis/32947056_593906784323324_3892317367585210368_n.jpeg",
+                alt: "Coriolis Effect"
+            },
+            {
+                src: "/archives/gallery/coriolis/33488708_1671300889573674_7341237910852599808_n.jpeg",
+                alt: "Coriolis Effect"
+            },
+            {
+                src: "/archives/gallery/coriolis/35280127_1705248489563029_4368399833623429120_o.jpeg",
+                alt: "Coriolis Effect"
+            },
+            {
+                src: "/archives/gallery/coriolis/36599551_10212207976050156_7300628359413760000_n.jpeg",
+                alt: "Coriolis Effect"
+            },
+            {
+                src: "/archives/gallery/coriolis/36914185_2134613063440108_8961484301447200768_n.jpeg",
+                alt: "Coriolis Effect"
+            },
+            {
+                src: "/archives/gallery/coriolis/cc1a4e7ef8ba77d6109cb0b9c6c453ea.png",
+                alt: "Coriolis Effect Diagram"
+            },
+            {
+                src: "/archives/gallery/coriolis/CRANE.jpeg",
+                alt: "Crane Construction"
+            },
+            
+            // Earth subdirectory
+            {
+                src: "/archives/gallery/earth/14469719_1695378274114893_1361291305466367271_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/16003208_1205736452828276_4765738371863241712_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/16195933_10212395462662101_7794912874561693457_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/16298908_10212395463302117_7877664931207665078_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/16406990_1744970702195207_6237097368011018252_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/18527869_1325491647520676_6121250229550409311_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/18622300_1325493274187180_864763874730399074_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/1892-new-standard-map-of-the-world-large-.jpeg",
+                alt: "1892 New Standard Map of the World"
+            },
+            {
+                src: "/archives/gallery/earth/2016-05-21_125555.jpeg",
+                alt: "Earth Image"
+            },
+            {
+                src: "/archives/gallery/earth/20638575_2122196058076724_4736739735491582144_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/20638681_2122196118076718_4258432469684595498_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/20663823_2122196011410062_683077355661905156_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/20707908_2122195751410088_6588740967596565785_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/20728007_2122195731410090_4268505077839496692_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/29594855_1827106580661184_7203321994818236044_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/34110819_126165081598194_8660222586497531904_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/36530542_10214133865919736_8668188539650834432_o.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/36530593_1081391115349249_9060542795801952256_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/39514684_856335964556027_1688391630203125760_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/39515265_856335957889361_3892620300218531840_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/39522548_856335961222694_2821059069769416704_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/49513296_367929694008918_3324652841447981056_n.jpeg",
+                alt: "Earth Map"
+            },
+            {
+                src: "/archives/gallery/earth/db9db7ef11fa150b0dd9edb5e6085caf.jpeg",
+                alt: "Earth Diagram"
+            },
+            {
+                src: "/archives/gallery/earth/the-black-cube-of-saturn.jpeg",
+                alt: "The Black Cube of Saturn"
+            },
+            
+            // Flight subdirectory
+            {
+                src: "/archives/gallery/flight/40301293_10216517460432753_8495909696236945408_o.jpeg",
+                alt: "Flight Path"
+            },
+            {
+                src: "/archives/gallery/flight/49748457_2918881874865143_8809558745408339968_n.jpeg",
+                alt: "Flight Path"
+            },
+            {
+                src: "/archives/gallery/flight/49947375_2658883124137040_6437954431068667904_n.jpeg",
+                alt: "Flight Path"
+            },
+            {
+                src: "/archives/gallery/flight/50160283_10155642546755633_1827372541358899200_n.jpeg",
+                alt: "Flight Path"
+            },
+            {
+                src: "/archives/gallery/flight/55632814_10213765490987774_1907702839409377280_n.jpeg",
+                alt: "Flight Path"
+            },
+            {
+                src: "/archives/gallery/flight/56425580_10213765490747768_3917864498781749248_n.jpeg",
+                alt: "Flight Path"
+            },
+            {
+                src: "/archives/gallery/flight/8355aa3679af54e99fb1969dbd4fbf47.jpeg",
+                alt: "Flight Path"
+            },
+            {
+                src: "/archives/gallery/flight/87831836_10216065870748746_8105703829971927040_n.jpeg",
+                alt: "Flight Path"
+            },
+            {
+                src: "/archives/gallery/flight/89104227_2588235311303366_7432098442215686144_n.jpeg",
+                alt: "Flight Path"
+            },
+            {
+                src: "/archives/gallery/flight/91187110_2851755078234468_4193301992719777792_n.jpeg",
+                alt: "Flight Path"
+            },
+            
+            // Funny subdirectory
+            {
+                src: "/archives/gallery/funny/15355678_1523475531002806_7050107538279053971_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/22814446_10214211851000530_8900006876023376762_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/29496797_1819680421403800_3964988886025134833_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/30629099_2049659738691899_3500470166683123712_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/31183450_214785559254169_3811236232289206507_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/33095518_10155207833236207_3026438822406651904_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/33602810_10214337500264494_6396117322142056448_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/34777603_1863389953956573_8626283879478591488_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/35236462_265419027353453_708244625415995392_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/35265257_10215547779863197_2693629382961922048_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/35955096_2119109464784791_1706047708181037056_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/36389756_131494147750702_7908627481773473792_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/36739870_573131679749019_1115105468616802304_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/36760330_2169026053168879_7012518740562542592_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/36767929_573131599749027_4658507471260745728_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/37588650_10156586796546602_6952655572290240512_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/40756477_1968703199876301_8094322394270793728_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/41688264_10216652216241564_1885131145591390208_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/42982612_2352073051487698_4051820620323749888_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/43454534_391868491349341_6589934408638136320_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/45418639_902016313331014_1382528978782257152_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/45692569_1850769715037611_3231758067544621056_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/45693919_187994745456081_4933968329820864512_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/47112778_278070056394860_4593173171783335936_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/48369514_972397716280863_7573655139748151296_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/49210647_292161158323856_2392397865927311360_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/54255883_10157892017770348_8356424049114480640_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/56418282_550491628810231_4802323622238617600_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/57019533_1807989422633849_3541265664436076544_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/57774928_280973512789930_8621065253695782912_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/5c77bfcd52af6ee48748df3406e196b2-meme-maker-collection.jpeg",
+                alt: "Meme Maker Collection"
+            },
+            {
+                src: "/archives/gallery/funny/61620851_448649322376548_7413609930856333312_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/80291742_2431066637159255_561565011151945728_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/81492424_3625765507441247_3417324491800313856_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/82379547_2584962901540600_2333297720069980160_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/87762660_240198417009695_3125289667977543680_o.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/87895881_519358568713994_6752274049189019648_n.jpeg",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/a20e00812949af796c96944ade6cd88c.png",
+                alt: "Funny Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/funny/DID-YOU-KNOW.jpeg",
+                alt: "Did You Know"
+            },
+            {
+                src: "/archives/gallery/funny/FERRARI.jpeg",
+                alt: "Ferrari Meme"
+            },
+            {
+                src: "/archives/gallery/funny/heck.jpeg",
+                alt: "Heck Meme"
+            },
+            {
+                src: "/archives/gallery/funny/image-312.jpeg",
+                alt: "Funny Image"
+            },
+            {
+                src: "/archives/gallery/funny/image-313.jpeg",
+                alt: "Funny Image"
+            },
+            {
+                src: "/archives/gallery/funny/Pluto-hero.jpeg",
+                alt: "Pluto Hero"
+            },
+            
+            // Gravity subdirectory
+            {
+                src: "/archives/gallery/gravity/1080.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/10802.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/10803.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/1300.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/15826065_10207478381067274_8850252981052033811_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/15826137_369676873396942_4685370486791585319_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/1640.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/2000.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/22195797_919623294861433_4750403436180977336_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/29425138_765320017009181_2015062990151221248_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/29683106_10210712837246657_8216664232843326053_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/31502608_531645823897605_1534112449265926144_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/31518692_1651862964849000_2767884303743320064_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/34510275_2219864411361686_7769784632341430272_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/38652725_1770600612977034_5923216125495083008_o.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/38707783_1770712812965814_7064169488983261184_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/38780704_1770601272976968_41615218031198208_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/39515128_10215594010460573_3870648428648202240_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/40294562_2345735668777919_2043736075855200256_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/43155466_2137461599618691_7730291390147461120_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/50429465_2310032875945807_1420219769230983168_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/54256835_10156104503436770_963260275711016960_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/57222201_10161728225445626_364624920790958080_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/77018941_159247721989321_2753224695598809088_o.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/83732064_619826545258824_3488000077031538688_o.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/83797969_619826631925482_7708450682583384064_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/83848113_619826518592160_1366856273751965696_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/83968942_619826721925473_9164640223097782272_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/84049420_619826451925500_1780014471016611840_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/84094746_619826638592148_2864340146700943360_n.jpeg",
+                alt: "Gravity Debunked"
+            },
+            {
+                src: "/archives/gallery/gravity/a-lie-told-often.jpeg",
+                alt: "A Lie Told Often"
+            },
+            {
+                src: "/archives/gallery/gravity/Flat-Earth-Memes-417-9.jpeg",
+                alt: "Gravity Flat Earth Meme"
+            },
+            {
+                src: "/archives/gallery/gravity/gravity-radius.png",
+                alt: "Gravity Radius Diagram"
+            },
+            {
+                src: "/archives/gallery/gravity/meanwhile-in-australia-1.jpeg",
+                alt: "Meanwhile in Australia 1"
+            },
+            {
+                src: "/archives/gallery/gravity/meanwhile-in-australia-2.jpeg",
+                alt: "Meanwhile in Australia 2"
+            },
+            {
+                src: "/archives/gallery/gravity/meanwhile-in-australia-3.jpeg",
+                alt: "Meanwhile in Australia 3"
+            },
+            {
+                src: "/archives/gallery/gravity/meanwhile-in-australia.jpeg",
+                alt: "Meanwhile in Australia"
+            },
+            {
+                src: "/archives/gallery/gravity/meanwhile-on-earth.jpeg",
+                alt: "Meanwhile on Earth"
+            },
+            
+            // Perspective subdirectory
+            {
+                src: "/archives/gallery/perspective/16265185_10212395700988059_1199992061690733076_n.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/23473141_1888925054469686_9113854146230836680_n.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/23517579_1888925114469680_5339369884986833073_n.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/23561848_1888925051136353_3572577240088212519_n.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/23658833_1888925117803013_8062538782921398910_n.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/31739985_384284028740155_1959433929488334848_n.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/36350552_194136414623090_7503961542954582016_n.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/36428325_194136331289765_5129232480993280000_n.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/36492359_490025924763328_5881222503665238016_o.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/36611265_10216100038197458_2838430962646253568_n.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/36615996_10216100043757597_33270083690168320_n.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/36683993_910714025797349_5805879074962276352_n.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/36747093_1791169220964168_824079541201797120_n.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/36830426_10216918312968989_7739481293016006656_o.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/36848462_10216918172605480_8457768548402462720_o.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/37081868_10161436232905354_3629411853777502208_n.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/37091468_10214555581102178_865337783026188288_n.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/37145083_10160681832370626_2436396095023087616_n.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/37203617_10205036660591760_6481028739684630528_n.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/46472493_2088535031199472_4494556822836871168_o-1.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/48365584_2365589123469467_2205458946217476096_n.jpeg",
+                alt: "Perspective Illusion"
+            },
+            {
+                src: "/archives/gallery/perspective/839.jpeg",
+                alt: "Perspective Illusion"
+            },
+            
+            // Photoshop subdirectory
+            {
+                src: "/archives/gallery/photoshop/16265555_10212395972874856_3299422248438152973_n.jpeg",
+                alt: "Photoshop Fake Images"
+            },
+            {
+                src: "/archives/gallery/photoshop/16266124_10212395360779554_3432378568529645527_n.jpeg",
+                alt: "Photoshop Fake Images"
+            },
+            {
+                src: "/archives/gallery/photoshop/2002-blue-marble-anomalies.png",
+                alt: "2002 Blue Marble Anomalies"
+            },
+            {
+                src: "/archives/gallery/photoshop/39568609_159846011582182_1030148082039259136_n.jpeg",
+                alt: "Photoshop Fake Images"
+            },
+            {
+                src: "/archives/gallery/photoshop/52598847_2090191884605170_8547955925246279680_n.jpeg",
+                alt: "Photoshop Fake Images"
+            },
+            {
+                src: "/archives/gallery/photoshop/79845573_554927968686293_2780868475210432512_o.jpeg",
+                alt: "Photoshop Fake Images"
+            },
+            {
+                src: "/archives/gallery/photoshop/85214151_3114303171934524_304942265699139584_o.jpeg",
+                alt: "Photoshop Fake Images"
+            },
+            {
+                src: "/archives/gallery/photoshop/86185723_3114302925267882_7974035152177201152_o.jpeg",
+                alt: "Photoshop Fake Images"
+            },
+            {
+                src: "/archives/gallery/photoshop/86267534_3114302815267893_6815819834090061824_o.jpeg",
+                alt: "Photoshop Fake Images"
+            },
+            {
+                src: "/archives/gallery/photoshop/86631254_2485915664850878_4632033215538790400_n.jpeg",
+                alt: "Photoshop Fake Images"
+            },
+            {
+                src: "/archives/gallery/photoshop/image-23.jpeg",
+                alt: "Photoshop Fake Image"
+            },
+            {
+                src: "/archives/gallery/photoshop/targetglobe.jpeg",
+                alt: "Target Globe"
+            },
+            
+            // Pseudo-science subdirectory
+            {
+                src: "/archives/gallery/pseudo-science/15171291_1232063456868609_1918844389176140886_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/15271864_213817579065119_1162069432357549967_o.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/16143146_10212397816360942_4280357342415459445_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/17308747_10212770846294202_4612703730941144270_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/18194629_809120345907850_3756422759914770187_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/18920195_1575681575788762_1420067453065359_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/18920275_1575680715788848_6214679928063501643_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/19247869_247796005708546_7795542160991317671_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/19260337_247795949041885_5448790151880778285_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/19260679_247795962375217_711734426133789066_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/19396756_247796012375212_5306635309299996008_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/19396806_247796025708544_5954844160917119702_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/19396884_247796042375209_2210450211636051693_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/19400126_247795952375218_613806335517901807_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/19420852_247795982375215_1772048712753929792_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/20914377_10214443001733330_5665252270913149851_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/22552505_10100374163378158_7634864151785625456_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/23622005_1529394753806079_1610704240221015830_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/28056294_10159931981790403_1106138291938487496_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/28467661_138866066935182_3163780074870291451_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/28783255_847475955454092_6993698239635651174_n.png",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/29541049_10212962603637705_8083333825302521017_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/34366417_1990712477637671_4202902588951101440_o.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/36711022_1713312795383237_3071697611518902272_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/37243155_1983072245036951_3882111060706066432_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/38474490_1770722136298215_6802765637476155392_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/39027551_1827516517325001_442898797090045952_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/39777308_2016165451755295_6079616547830104064_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/41195629_1996823577008854_8576308533375533056_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/41490543_2074782412546446_4904383431149879296_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/46040789_360192281394415_139384281599311872_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/46470458_10212799227198744_2174079361102118912_n-1.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/48412960_2290666314297442_5016630150867976192_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/49482117_2302257723138301_8409580767687999488_n.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/49896135_2202232179815287_3727622684796780544_n-1.jpeg",
+                alt: "Pseudo-Science Debunked"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/quote-einstein-s-relativity-work-is-a-magnificent-mathematical-garb-which-fascinates-dazzles-nikola-tesla-59-14-10.jpeg",
+                alt: "Einstein Relativity Quote - Tesla"
+            },
+            {
+                src: "/archives/gallery/pseudo-science/scientism.jpeg",
+                alt: "Scientism"
+            },
+            
+            // Satellites subdirectory
+            {
+                src: "/archives/gallery/satellites/29356643_1976662992653108_5010230095546155008_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            {
+                src: "/archives/gallery/satellites/29542869_10215355680066514_6359425883364857274_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            {
+                src: "/archives/gallery/satellites/37022202_2146746665353466_1682916728016732160_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            {
+                src: "/archives/gallery/satellites/37226813_2041384562775002_4209538485222113280_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            {
+                src: "/archives/gallery/satellites/37238889_10211374744184237_7276320395001593856_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            {
+                src: "/archives/gallery/satellites/37251585_10211375984375241_3268199666755305472_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            {
+                src: "/archives/gallery/satellites/37265703_10160438868435532_1665488326255181824_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            {
+                src: "/archives/gallery/satellites/37272463_10160438871580532_5566116644536713216_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            {
+                src: "/archives/gallery/satellites/37300469_10160438869675532_4515830233940623360_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            {
+                src: "/archives/gallery/satellites/45563354_2122322494472923_829028833880440832_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            {
+                src: "/archives/gallery/satellites/45676866_304170243758762_4600803026565857280_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            {
+                src: "/archives/gallery/satellites/45761066_2230561903642460_4172780136468316160_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            {
+                src: "/archives/gallery/satellites/45931638_2230561946975789_1215864701301293056_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            {
+                src: "/archives/gallery/satellites/46289316_307812833394503_8725136047899410432_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            {
+                src: "/archives/gallery/satellites/48361141_10156374359918171_3481517403718811648_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            {
+                src: "/archives/gallery/satellites/68685903_10218398921661600_1919508570634715136_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            {
+                src: "/archives/gallery/satellites/69556840_10157400584966465_6891336740817076224_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            {
+                src: "/archives/gallery/satellites/78628044_137442034348225_5099615992837832704_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            {
+                src: "/archives/gallery/satellites/86499877_3398527680164008_7593419754610622464_n.jpeg",
+                alt: "Satellites Debunked"
+            },
+            
+            // The-moon subdirectory
+            {
+                src: "/archives/gallery/the-moon/28472237_2028665207459088_2348027586184720466_n2.jpeg",
+                alt: "Moon Hoax Evidence"
+            },
+            {
+                src: "/archives/gallery/the-moon/39396369_1787373104633118_5311993535690440704_n.jpeg",
+                alt: "Moon Hoax Evidence"
+            },
+            {
+                src: "/archives/gallery/the-moon/39737188_2016165328421974_1694316352904364032_n.jpeg",
+                alt: "Moon Hoax Evidence"
+            },
+            {
+                src: "/archives/gallery/the-moon/42282146_291580768334214_1047718651513274368_n.jpeg",
+                alt: "Moon Hoax Evidence"
+            },
+            {
+                src: "/archives/gallery/the-moon/42317255_10155612349957377_2530432492708560896_n.jpeg",
+                alt: "Moon Hoax Evidence"
+            },
+            {
+                src: "/archives/gallery/the-moon/42340574_2229821197295419_3964013763463479296_n.jpeg",
+                alt: "Moon Hoax Evidence"
+            },
+            {
+                src: "/archives/gallery/the-moon/42461351_769123956591353_5109163498978410496_n.jpeg",
+                alt: "Moon Hoax Evidence"
+            },
+            {
+                src: "/archives/gallery/the-moon/43180768_2034338666609206_3387664319532498944_n.jpeg",
+                alt: "Moon Hoax Evidence"
+            },
+            {
+                src: "/archives/gallery/the-moon/44329372_2211549092504031_6865720168589295616_n.jpeg",
+                alt: "Moon Hoax Evidence"
+            },
+            {
+                src: "/archives/gallery/the-moon/54434519_2035755789872335_5827071272529428480_n.jpeg",
+                alt: "Moon Hoax Evidence"
+            },
+            {
+                src: "/archives/gallery/the-moon/56314587_2340284269343410_8956212954940833792_n.jpeg",
+                alt: "Moon Hoax Evidence"
+            },
+            {
+                src: "/archives/gallery/the-moon/67684359_2153920584735969_3252958880816168960_n.jpeg",
+                alt: "Moon Hoax Evidence"
+            },
+            
+            // The-sun subdirectory
+            {
+                src: "/archives/gallery/the-sun/1080.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/1140.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/148415008_413536703307942_5067597985207293019_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/1500.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/15095027_10207725370364864_7556877745188367911_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/16115062_10212395421421070_8418033259584116770_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/17098362_1611247692224070_9171954141038474570_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/17190815_10208384304754946_3610927991549212014_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/18485938_424147741275342_6268753908468720580_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/18839133_10211832602962117_6547347150306283342_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/20258399_1416599365044078_5035741180096448309_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/22279504_919851108171985_7172375952944035582_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/233789240_1074832972921624_9209938198059262599_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/23561855_375978929517323_5405583391179254172_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/23de4c5fe41ea2554d8d11100b9a0a1d.png",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/246173748_1042830916559354_1101154082989590533_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/264352589_354724063125553_8971260636080269064_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/270161749_10158538306972913_2305255635233498021_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/286406803_1675006936213298_5147074918678646580_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/290c4ac2d79e471b3f6f0d26be2c21a6.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/29101204_1949928765077761_4140675758441889792_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/29386019_10204210486379888_9056250999355044515_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/30688896_1654674597914841_8775100974411808768_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/34014529_1675055982531498_937858752495747072_o.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/35650134_10156713387165288_4790563881523085312_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/36686740_266223047266545_5058305824858832896_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/36795489_10216135389641222_5604780129113866240_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/36873932_1917093435247981_5668267923366477824_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/36998512_10211342512538466_844150391527440384_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/37203617_10205036660591760_6481028739684630528_n-1.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/41205973_2131776966832606_8989119894851158016_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/44395314_1946384088816023_8846836905464037376_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/44422190_1946385932149172_1826894120656830464_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/45823317_10216085286676552_4650631716715626496_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/82996658_2585948888318121_7527621048909430784_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/91721711_1274841116048530_1257494685430054912_n.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/e067990b4cb5a06927d4783186f85375.jpeg",
+                alt: "Sun Local and Close"
+            },
+            {
+                src: "/archives/gallery/the-sun/erastosthenes-fool.jpeg",
+                alt: "Eratosthenes Fool"
+            },
+            {
+                src: "/archives/gallery/the-sun/Flat-Earth-Memes-417-14.jpeg",
+                alt: "Sun Flat Earth Meme"
+            },
+            
+            // Water-level subdirectory
+            {
+                src: "/archives/gallery/water-level/1080.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/12321575_10207376173895558_9199750304057680573_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/1440.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/14906983_1473512396010956_8187552407344125710_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/14908300_1473512512677611_163419139376061412_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/14962568_1473512486010947_2425436458586665699_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/14962718_1473512442677618_6178428728764111783_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/16266229_10212397836681450_3016190395013929116_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/18402805_125962337965790_3495852714320985349_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/18402993_1403563083015348_933471735534434861_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/18447588_125962204632470_7584539329049491921_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/23519351_376084966173386_5095148856683849441_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/30582401_10213503635522657_7296528551136722944_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/31779510_384281155407109_2444981764712562688_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/36317967_10212146638813812_1886059361038499840_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/36850538_10216129449492722_4660206594682781696_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/40684463_10213267043050744_6471809802837164032_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/40960977_2090828631169809_5626676125791944704_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/50654736_174771240171720_3295504646461718528_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/53403647_3121354081223608_5848837827483140096_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/53450783_2169586853100741_162883413475328000_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/53723677_10156623770049807_1899431273563160576_n.jpeg",
+                alt: "Water Always Level"
+            },
+            {
+                src: "/archives/gallery/water-level/image-64.jpeg",
+                alt: "Water Always Level"
+            }
         ];
 
         let currentPage = 1;
-        const itemsPerPage = 9;
+        const itemsPerPage = 32;
         let filteredData = [...documentariesData];
+        let currentMemeIndex = 0;
 
         function formatDuration(minutes) {
             const hours = Math.floor(minutes / 60);
@@ -380,9 +2076,13 @@
             const pageData = filteredData.slice(start, end);
 
             grid.innerHTML = pageData.map(doc => `
-                <div class="card" onclick="playVideo('${doc.url}', '${doc.title.replace(/'/g, "\\'")}')">
+                <div class="card">
                     <div class="card-title">${doc.title}</div>
                     <span class="card-duration">${formatDuration(doc.duration)}</span>
+                    <div class="url-buttons">
+                        <button class="url-button primary" onclick="playVideo('${doc.publicUrl}', '${doc.title.replace(/'/g, "\\'")}')">▶ Watch</button>
+                        <button class="url-button archive" onclick="playVideo('${doc.archiveUrl}', '${doc.title.replace(/'/g, "\\'")}')">📁 Archive</button>
+                    </div>
                 </div>
             `).join('');
 
@@ -418,13 +2118,54 @@
         function renderDocuments() {
             const grid = document.getElementById('documentsGrid');
             grid.innerHTML = documentsData.map(doc => `
-                <div class="card document-card" onclick="window.open('${doc.url}', '_blank')">
+                <div class="card document-card">
                     <div class="document-icon">📄</div>
                     <div class="document-info">
                         <div class="card-title">${doc.title}</div>
                     </div>
+                    <div class="url-buttons">
+                        <button class="url-button primary" onclick="window.open('${doc.publicUrl}', '_blank')">🔗 Original</button>
+                        <button class="url-button archive" onclick="window.open('${doc.archiveUrl}', '_blank')">📁 Archive</button>
+                    </div>
                 </div>
             `).join('');
+        }
+
+        function renderMemes() {
+            const grid = document.getElementById('memesGrid');
+            grid.innerHTML = memesData.map((meme, index) => `
+                <div class="card meme-card" onclick="openMemeModal(${index})">
+                    <img class="meme-image" src="${meme.src}" alt="${meme.alt}">
+                </div>
+            `).join('');
+        }
+
+        function openMemeModal(index) {
+            currentMemeIndex = index;
+            const modal = document.getElementById('memeModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = memesData[index].src;
+            modalImage.alt = memesData[index].alt;
+            modal.classList.add('active');
+        }
+
+        function closeMemeModal() {
+            const modal = document.getElementById('memeModal');
+            modal.classList.remove('active');
+        }
+
+        function nextMeme() {
+            currentMemeIndex = (currentMemeIndex + 1) % memesData.length;
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = memesData[currentMemeIndex].src;
+            modalImage.alt = memesData[currentMemeIndex].alt;
+        }
+
+        function prevMeme() {
+            currentMemeIndex = (currentMemeIndex - 1 + memesData.length) % memesData.length;
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = memesData[currentMemeIndex].src;
+            modalImage.alt = memesData[currentMemeIndex].alt;
         }
 
         function playVideo(url, title) {
@@ -453,6 +2194,28 @@
             accordion.classList.remove('open');
             player.src = '';
             document.getElementById('playerTitle').textContent = 'Select a video to play';
+        });
+
+        // Modal controls
+        document.getElementById('modalClose').addEventListener('click', closeMemeModal);
+        document.getElementById('modalNext').addEventListener('click', nextMeme);
+        document.getElementById('modalPrev').addEventListener('click', prevMeme);
+
+        // Close modal on background click
+        document.getElementById('memeModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeMemeModal();
+            }
+        });
+
+        // Keyboard navigation for modal
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('memeModal');
+            if (modal.classList.contains('active')) {
+                if (e.key === 'ArrowRight') nextMeme();
+                if (e.key === 'ArrowLeft') prevMeme();
+                if (e.key === 'Escape') closeMemeModal();
+            }
         });
 
         // Tab switching
@@ -488,6 +2251,7 @@
         // Initial render
         renderDocumentaries();
         renderDocuments();
+        renderMemes();
     </script>
 </body>
 </html>
