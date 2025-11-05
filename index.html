@@ -5498,7 +5498,7 @@
                     <div class="card-title">${video.title}</div>
                     <span class="card-duration">${formatDuration(video.duration)}</span>
                     <div class="url-buttons">
-                        <button class="url-button primary" onclick="window.open('${video.url}', '_blank')">🎵 Watch Video</button>
+                        <button class="url-button primary" onclick="playVideo('${video.url}', '${video.title.replace(/'/g, "\\'")}')">${t('buttons.play')}</button>
                     </div>
                 </div>
             `).join('');
