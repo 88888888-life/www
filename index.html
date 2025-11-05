@@ -347,7 +347,7 @@
         /* Match controls width to grid layout */
         @media (min-width: 1200px) {
             .controls {
-                max-width: 1200px;
+                /* max-width: 1200px; */
                 margin-left: auto;
                 margin-right: auto;
                 margin-bottom: 20px;
@@ -410,7 +410,7 @@
         @media (min-width: 1200px) {
             .grid {
                 grid-template-columns: repeat(4, 1fr);
-                max-width: 1200px;
+                /* max-width: 1200px; */
                 margin-left: auto;
                 margin-right: auto;
             }
@@ -1072,6 +1072,7 @@
 
         .playlist-info {
             flex: 1;
+            flex-direction: column;
         }
 
         .playlist-card .card-title {
@@ -5578,14 +5579,13 @@
                     <div class="playlist-icon">📋</div>
                     <div class="playlist-info">
                         <div class="card-title">${playlist.title}</div>
-                        <div class="playlist-description">${playlist.description}</div>
                         <div class="playlist-meta">
                             <span class="playlist-count">📹 ${playlist.videoCount} videos</span>
                             <span class="playlist-category">${playlist.category}</span>
                         </div>
-                    </div>
-                    <div class="url-buttons">
-                        <button class="url-button primary" onclick="trackExternalLink('playlists', '${playlist.url}', '${playlist.title.replace(/'/g, '\'')}'); window.open('${playlist.url}', '_blank')">📋 View Playlist</button>
+                        <div class="url-buttons">
+                            <button class="url-button primary" onclick="trackExternalLink('playlists', '${playlist.url}', '${playlist.title.replace(/'/g, '\'')}'); window.open('${playlist.url}', '_blank')">📋 View Playlist</button>
+                        </div>
                     </div>
                 </div>
             `).join('');
