@@ -1385,6 +1385,165 @@
             box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
         }
 
+        .gtv-flyers-button {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 15px auto;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .gtv-flyers-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .gtv-flyers-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .gtv-flyers-section.hidden {
+            display: none;
+        }
+
+        .gtv-flyers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .gtv-flyers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gtv-flyers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .gtv-flyer-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            aspect-ratio: 1;
+        }
+
+        .gtv-flyer-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .gtv-flyer-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .gtv-flyer-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .gtv-flyer-modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gtv-flyer-modal-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .gtv-flyer-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gtv-flyer-nav-btn:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .gtv-flyer-prev {
+            left: 20px;
+        }
+
+        .gtv-flyer-next {
+            right: 20px;
+        }
+
+        .gtv-flyer-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gtv-flyer-close:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+
         .prosperity-definition {
             background: rgba(255, 255, 255, 0.9);
             padding: 20px;
@@ -1578,6 +1737,16 @@
                         <li><a href="https://www.wukongsch.com/blog/chinese-lucky-number-8-guide-2024-post-23655/">https://www.wukongsch.com/blog/chinese-lucky-number-8-guide-2024-post-23655/</a></li>
                     </ul>
                 </p>
+            </div>
+
+            <button class="gtv-flyers-button" onclick="toggleGtvFlyersSection()">
+                <img src="assets/GTV_Flyers.png" alt="GTV Flyers" style="width: 20px; height: 20px;">
+                GTV Flyers
+            </button>
+            <div class="gtv-flyers-section hidden" id="gtvFlyersSection">
+                <div class="gtv-flyers-grid" id="gtvFlyersGrid">
+                    <!-- Flyer items will be populated by JavaScript -->
+                </div>
             </div>
             
         </header>
@@ -6223,6 +6392,162 @@
         function toggleProsperityDefinition() {
             const definition = document.querySelector('.prosperity-definition');
             definition.classList.toggle('hidden');
+        }
+
+        const gtvFlyersData = [
+            'assets/911.jpg',
+            'assets/ABORTION.jpg',
+            'assets/ADL.jpg',
+            'assets/ANTI.png',
+            'assets/BIDEN.jpg',
+            'assets/BLACKROCK.jpg',
+            'assets/CHRIST.png',
+            'assets/COMMUNISM.jpg',
+            'assets/COVID.jpg',
+            'assets/DISNEY.jpg',
+            'assets/DIVERSITY.jpg',
+            'assets/DRESDEN.jpeg',
+            'assets/ELDERS.jpg',
+            'assets/EPSTEIN.png',
+            'assets/FEMINISM.jpg',
+            'assets/FREE.png',
+            'assets/GUN.jpg',
+            'assets/HEDGE.jpg',
+            'assets/IMMIGRATION.jpg',
+            'assets/IVY.png',
+            'assets/JFK.jpg',
+            'assets/LGBT.jpg',
+            'assets/LIBERTY.png',
+            'assets/MEDIAfixed.jpg',
+            'assets/PENIS.jpg',
+            'assets/POLITICS.png',
+            'assets/PORN.jpg',
+            'assets/SACRIFICE.png',
+            'assets/SAVAGES.png',
+            'assets/SLAVE.jpg',
+            'assets/TALMUD.jpg',
+            'assets/THEFED.jpg',
+            'assets/TRUMP.jpg',
+            'assets/UKRAINE-RUSSIA.jpg'
+        ];
+
+        let currentGtvFlyerIndex = 0;
+
+        function toggleGtvFlyersSection() {
+            const section = document.getElementById('gtvFlyersSection');
+            const isHidden = section.classList.contains('hidden');
+            
+            if (isHidden) {
+                section.classList.remove('hidden');
+                renderGtvFlyers();
+            } else {
+                section.classList.add('hidden');
+            }
+        }
+
+        function renderGtvFlyers() {
+            const grid = document.getElementById('gtvFlyersGrid');
+            grid.innerHTML = '';
+
+            gtvFlyersData.forEach((imagePath, index) => {
+                const flyerItem = document.createElement('div');
+                flyerItem.className = 'gtv-flyer-item';
+                flyerItem.onclick = () => openGtvFlyerModal(index);
+
+                const img = document.createElement('img');
+                img.src = imagePath;
+                img.alt = '';
+                img.className = 'gtv-flyer-image';
+                img.loading = 'lazy';
+
+                flyerItem.appendChild(img);
+                grid.appendChild(flyerItem);
+            });
+        }
+
+        function openGtvFlyerModal(index) {
+            currentGtvFlyerIndex = index;
+            
+            const modal = document.createElement('div');
+            modal.className = 'gtv-flyer-modal';
+            modal.id = 'gtvFlyerModal';
+            
+            const modalContent = document.createElement('div');
+            modalContent.className = 'gtv-flyer-modal-content';
+            
+            const img = document.createElement('img');
+            img.src = gtvFlyersData[index];
+            img.alt = '';
+            img.className = 'gtv-flyer-modal-image';
+            
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'gtv-flyer-close';
+            closeBtn.innerHTML = '×';
+            closeBtn.onclick = closeGtvFlyerModal;
+            
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'gtv-flyer-nav-btn gtv-flyer-prev';
+            prevBtn.innerHTML = '‹';
+            prevBtn.onclick = () => navigateGtvFlyer(-1);
+            
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'gtv-flyer-nav-btn gtv-flyer-next';
+            nextBtn.innerHTML = '›';
+            nextBtn.onclick = () => navigateGtvFlyer(1);
+            
+            modalContent.appendChild(img);
+            modalContent.appendChild(closeBtn);
+            modalContent.appendChild(prevBtn);
+            modalContent.appendChild(nextBtn);
+            modal.appendChild(modalContent);
+            
+            document.body.appendChild(modal);
+            
+            modal.onclick = (e) => {
+                if (e.target === modal) {
+                    closeGtvFlyerModal();
+                }
+            };
+            
+            document.addEventListener('keydown', handleGtvFlyerKeydown);
+        }
+
+        function navigateGtvFlyer(direction) {
+            currentGtvFlyerIndex += direction;
+            
+            if (currentGtvFlyerIndex < 0) {
+                currentGtvFlyerIndex = gtvFlyersData.length - 1;
+            } else if (currentGtvFlyerIndex >= gtvFlyersData.length) {
+                currentGtvFlyerIndex = 0;
+            }
+            
+            const img = document.querySelector('.gtv-flyer-modal-image');
+            if (img) {
+                img.src = gtvFlyersData[currentGtvFlyerIndex];
+                img.alt = '';
+            }
+        }
+
+        function closeGtvFlyerModal() {
+            const modal = document.getElementById('gtvFlyerModal');
+            if (modal) {
+                modal.remove();
+            }
+            document.removeEventListener('keydown', handleGtvFlyerKeydown);
+        }
+
+        function handleGtvFlyerKeydown(e) {
+            switch(e.key) {
+                case 'ArrowLeft':
+                    navigateGtvFlyer(-1);
+                    break;
+                case 'ArrowRight':
+                    navigateGtvFlyer(1);
+                    break;
+                case 'Escape':
+                    closeGtvFlyerModal();
+                    break;
+            }
         }
 
         const itemsPerPage = 32;
