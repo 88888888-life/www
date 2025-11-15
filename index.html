@@ -1756,7 +1756,7 @@
     <div class="container">
         <header role="banner">
             <h1>88888888.LIFE</h1>
-            <p class="subtitle" data-i18n="subtitle">Explore Truth & Knowledge</p>
+            <p class="subtitle" data-i18n="subtitle">∞ Explore Truth & Knowledge ∞</p>
             <button class="prosperity-button" onclick="toggleProsperityDefinition()">
                 Chinese Lucky Number 8
             </button>
@@ -2468,8 +2468,8 @@
         // Internationalization object with translations for all supported languages
         const translations = {
             en: {
-                subtitle: "Explore Truth & Knowledge",
-                chineseLuckyNumber: "Chinese Lucky Number 8",
+                subtitle: "∞ Explore Truth & Knowledge ∞",
+                chineseLuckyNumber: "∞ Chinese Lucky Number 8 ∞",
                 tabs: {
                     integral: "Integral",
                     documentaries: "Documentaries", 
@@ -6808,7 +6808,7 @@
 
             grid.innerHTML = pageData.map((doc, index) => `
                 <div class="card">
-                    <div class="card-thumb">${doc.publicUrl === '' ? '' : `<img src="https://img.youtube.com/vi/${youtubeId(doc.publicUrl)}/mqdefault.jpg" alt="" title="" />`}</div>
+                    <div class="card-thumb">${doc.publicUrl === '' ? '' : `<img src="https://img.youtube.com/vi/${youtubeId(doc.publicUrl)}/mqdefault.jpg" alt="" title="" onclick="playVideo('${doc.publicUrl}', '${doc.title.replace(/'/g, "\\'")}')" />`}</div>
                     <div class="card-title">${doc.title}</div>
                     <span class="card-duration">${formatDuration(doc.duration)}</span>
                     <div class="url-buttons">
@@ -7279,7 +7279,7 @@
             const container = document.querySelector('.container');
             accordion.classList.toggle('open');
             container.classList.toggle('accordion-open', accordion.classList.contains('open'));
-            document.getElementById('toggleIcon').textContent = accordion.classList.contains('open') ? '▼' : '▲';
+            document.getElementById('toggleIcon').textContent = accordion.classList.contains('open') ? '▼ ∞∞∞∞∞∞∞∞' : '▲ 88888888.LIFE';
         });
 
         document.getElementById('closePlayer').addEventListener('click', function() {
